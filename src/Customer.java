@@ -55,9 +55,7 @@ public class Customer extends User {
             option = mainMenu();
         }
 
-        //the user chose option 0, so exit the program
-        System.out.println("Exiting...bye");
-        System.exit(0);
+        APP.runMenu();
     }
 
     //print the dish (the toString method is automatically called).
@@ -122,7 +120,6 @@ public class Customer extends User {
         for (int i = 0; i < numberDishes; i++) {
             removeDish();
         }
-        System.out.println("Remove Dish Successfully");
     }
 
     private void removeDish() {
@@ -135,7 +132,7 @@ public class Customer extends User {
 
         //check whether the dish Customer want to remove exist in the dishLine
         int index = APP.dishLine.checkUserPosition(name);
-        if ( index == -1) {
+        if (index == -1) {
             System.out.println("Not in the Dish Line");
             removeDish();
         }
