@@ -92,7 +92,8 @@ public class Owner extends User {
         System.out.print(APP.storeDishes.listDishes());
 
         System.out.print("Enter the Dish Name that you would like to update:  ");
-        String name = input.next();
+        input.nextLine();
+        String name = input.nextLine();
 
         boolean isFound = false;
         int index = 0;
