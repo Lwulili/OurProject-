@@ -82,7 +82,7 @@ public class Dish {
      */
     public String toString() {
         return " Dish description:   " + dishName
-                + "   ,   dish's price: " + price
+                + "   ,   dish's price: " + price + " ¥"
                 + "   ,   flavor: " + flavor;
     }
 }

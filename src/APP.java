@@ -29,7 +29,6 @@ public class APP {
         }
         addUser(judge);
         new Owner();
-        runMenu();
     }
 
     public static void runMenu() {

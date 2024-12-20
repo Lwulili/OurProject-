@@ -58,8 +58,6 @@ public class Owner extends User {
         System.out.print("How many dishes would you like to have in your Menu?  ");
         int numberDishes = input.nextInt();
 
-        APP.storeDishes = new StoreDishes();
-
         //ask the user for the details of the products and add them to the order
         for (int i = 0; i < numberDishes; i++) {
             addDish();
@@ -87,12 +85,12 @@ public class Owner extends User {
 
 
     private void updateMenu() {
+        input.nextLine();  //dummy read of String to clear the buffer - bug in Scanner class.
         //ask what dish that owner want to change
         System.out.println("Current Menu:");
         System.out.print(APP.storeDishes.listDishes());
 
         System.out.print("Enter the Dish Name that you would like to update:  ");
-        input.nextLine();
         String name = input.nextLine();
 
         boolean isFound = false;
@@ -112,10 +110,16 @@ public class Owner extends User {
                     ==>>""");
             String newName = input.next();
             APP.storeDishes.dishes[index].setDishName(newName);
-            System.out.println("Update the Price to ->");
+            System.out.print("""
+                    Update the Price to 
+                    ==>>""");
+            input.nextLine();
             int newPrice = input.nextInt();
             APP.storeDishes.dishes[index].setPrice(newPrice);
-            System.out.println("Update the Flavor to ->");
+            System.out.print("""
+                    Update the Flavor to 
+                    ==>>""");
+            input.nextLine();
             String newFlavor = input.next();
             APP.storeDishes.dishes[index].setFlavor(newFlavor);
 

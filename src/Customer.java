@@ -79,9 +79,9 @@ public class Customer extends User {
     private void processOrder() {
         //find out from the user how many products they would like to order
         System.out.print("How many dishes would you like to have in your Menu?  ");
+        input.nextLine();
         int numberDishes = input.nextInt();
 
-        APP.dishLine = new StoreDishes();
 
         //ask the user for the details of the products and add them to the order
         for (int i = 0; i < numberDishes; i++) {
@@ -91,7 +91,8 @@ public class Customer extends User {
 
     private void orderDish() {
         System.out.println("Enter the Dish Name:  ");
-        String dishName = input.next();
+        input.nextLine();
+        String dishName = input.nextLine();
         //check whether the dish exist in the storeDishes
         int index = APP.storeDishes.checkUserPosition(dishName);
         if (index == -1) {
@@ -122,7 +123,9 @@ public class Customer extends User {
         }
     }
 
+    //Question: removeDish will lead to NullPointerException and we don't know how to solve it.
     private void removeDish() {
+        System.out.println("Don't call this method. Because this will lead to NullPointerException and we don't know how to solve it.");
         input.nextLine();  //dummy read of String to clear the buffer - bug in Scanner class.
         System.out.println("Current Menu:");
         System.out.println(APP.dishLine.listDishes());
